@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="{{path('profile', {'id': post.getUser().getId()})}}" class="card-link">Profil</a>
+        </div>
+    </div>
+
+{{ form_start(form) }}
+    {{ form_row(form.content) }}
+
+    <button type="submit" class="btn btn-primary">Commenter</button>
+{{ form_end(form) }}
+
+{% for c in comments %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ c.user }}</h5>
+            <p class="card-text">{{ c.content }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

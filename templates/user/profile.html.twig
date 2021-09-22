@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    {{user.getEmail()}}
+    {% if following == true %}
+        <p>Followed</p>
+    {% else %}
+        <a href="{{path('follow', {'id': user.getId()})}}">Follow</a>
+    {% endif %}
+    <a href="{{path('followers', {'id': user.getId()})}}">Followers</a>
+    <a href="{{path('following', {'id': user.getId()})}}">Following</a>
+    {% for p in user.getPosts() %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ p.title }}</h5>
+                <p class="card-text">{{ p.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

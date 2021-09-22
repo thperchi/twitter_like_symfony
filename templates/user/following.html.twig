@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+{% for f in user.getFollowing() %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ f.email }}</h5>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
