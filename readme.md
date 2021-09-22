@@ -12,6 +12,9 @@ Ceci est un projet personnel destiné a m'exercer sur symfony reprenant le conce
 
 ### Lancement
 
-docker-compose up -d
-symfony serve -d
-http://localhost:8000
+* docker-compose up -d
+* symfony serve -d
+
+### Connexion
+
+* http://localhost:8000
