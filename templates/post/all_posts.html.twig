@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+{% for p in posts %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text">{{ p.content }}</p>
+            <a href="{{path('post_detail', {'id': p.getId()})}}" class="card-link">Details</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

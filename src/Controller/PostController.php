@@ -30,6 +30,16 @@ class PostController extends AbstractController
     }
 
     /**
+     * @Route("/all", name="all_posts")
+     */
+    public function allPosts(PostRepository $posts): Response
+    {
+        return $this->render('post/all_posts.html.twig', [
+            'posts' => $posts->findAll()
+        ]);
+    }
+
+    /**
      * @Route("/post_detail/{id}", name="post_detail")
      */
     public function post_detail(int $id, PostRepository $posts, Request $req, EntityManagerInterface $em): Response
