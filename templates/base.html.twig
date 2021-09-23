@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{path('all_posts')}}">Tous</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('add_post')}}">Creer un post</a>
+        </li>
       </ul>
       <!-- Left links -->
     </div>
@@ -76,7 +79,7 @@
       {% if app.user %}
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Profil</a>
+          <a class="nav-link" href="{{path('profile', {'id': app.user.getId()})}}">Profil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{path('app_logout')}}">Se déconnecter</a>

@@ -4,7 +4,8 @@
 
 {% block body %}
     {{user.getEmail()}}
-    {% if following == true %}
+    {% if user == app.user %}
+    {% elseif following == true %}
         <p>Followed</p>
     {% else %}
         <a href="{{path('follow', {'id': user.getId()})}}">Follow</a>
